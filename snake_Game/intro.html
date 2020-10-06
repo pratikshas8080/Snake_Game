@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Snake Game
+    </title>
+    <!---CSS File-->
+    <link rel="stylesheet" href="intro.css"> </head>
+
+<body>
+    <!---Div Section-->
+    <div class="snake">
+        <div class="header">
+            <h1>Snake Game</h1>
+        </div>
+        <div class="details">
+            <span class="new_Score">Current Score: <span class="score_Number">0</span></span>
+            <span class="best_Score">Best Score: <span class="best_Score_Number">0</span></span>
+        </div>
+        <div class="game">
+            <div class="container"></div>
+        </div>
+        <div class="buttons">
+            <button type="button" data-num="1" class="topBtn btn">
+                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <defs>
+                        <style>
+                            .cls-1 {
+                                fill: #fff;
+                            }
+                        </style>
+                    </defs>
+                    <title>arrow-up-outline</title>
+                    <path class="cls-1"
+                        d="M256,0C114.84,0,0,114.84,0,256S114.84,512,256,512,512,397.16,512,256,397.16,0,256,0Zm0,469.33c-117.63,0-213.33-95.7-213.33-213.33S138.37,42.67,256,42.67,469.33,138.37,469.33,256,373.63,469.33,256,469.33Z" />
+                    <path class="cls-1"
+                        d="M271.08,155.58a21.33,21.33,0,0,0-30.17,0l-64,64a21.33,21.33,0,0,0,30.17,30.17l27.58-27.58V384a21.33,21.33,0,1,0,42.67,0V222.17l27.58,27.58a21.33,21.33,0,0,0,30.17-30.17Z" />
+                </svg></button>
+            <br>
+            <button type="button" data-num="2" class="leftBtn btn">
+                <svg id="Layer_1" data-name="Layer 1"
+                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <defs>
+                        <style>
+                            .cls-1 {
+                                fill: #fff;
+                            }
+                        </style>
+                    </defs>
+                    <title>arrow-left-outline</title>
+                    <path class="cls-1"
+                        d="M256,0C114.84,0,0,114.84,0,256S114.84,512,256,512,512,397.16,512,256,397.16,0,256,0Zm0,469.33c-117.63,0-213.33-95.7-213.33-213.33S138.37,42.67,256,42.67,469.33,138.37,469.33,256,373.63,469.33,256,469.33Z" />
+                    <path class="cls-1"
+                        d="M384,234.67H222.17l27.58-27.58a21.33,21.33,0,0,0-30.17-30.17l-64,64a21.33,21.33,0,0,0,0,30.17l64,64a21.33,21.33,0,1,0,30.17-30.17l-27.58-27.58H384a21.33,21.33,0,0,0,0-42.67Z" />
+                </svg></button>
+            <button type="button" data-num="3" class="rightBtn btn">
+                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <defs>
+                        <style>
+                            .cls-1 {
+                                fill: #fff;
+                            }
+                        </style>
+                    </defs>
+                    <title>arrow-right-outline</title>
+                    <path class="cls-1"
+                        d="M256,0C114.84,0,0,114.84,0,256S114.84,512,256,512,512,397.16,512,256,397.16,0,256,0Zm0,469.33c-117.63,0-213.33-95.7-213.33-213.33S138.37,42.67,256,42.67,469.33,138.37,469.33,256,373.63,469.33,256,469.33Z" />
+                    <path class="cls-1"
+                        d="M292.42,176.92a21.33,21.33,0,0,0-30.17,30.17l27.58,27.58H128a21.33,21.33,0,0,0,0,42.67H289.83l-27.58,27.58a21.33,21.33,0,1,0,30.17,30.17l64-64a21.33,21.33,0,0,0,0-30.17Z" />
+                </svg></button>
+            <br>
+            <button type="button" data-num="4" class="downBtn btn">
+                <svg id="Layer_1" data-name="Layer 1"
+                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <defs>
+                        <style>
+                            .cls-1 {
+                                fill: #fff;
+                            }
+                        </style>
+                    </defs>
+                    <title>arrow-down-outline</title>
+                    <path class="cls-1"
+                        d="M256,0C114.84,0,0,114.84,0,256S114.84,512,256,512,512,397.16,512,256,397.16,0,256,0Zm0,469.33c-117.64,0-213.33-95.7-213.33-213.33S138.36,42.67,256,42.67,469.33,138.37,469.33,256,373.64,469.33,256,469.33Z" />
+                    <path class="cls-1"
+                        d="M304.92,262.25l-27.58,27.58V128a21.33,21.33,0,1,0-42.67,0V289.83l-27.58-27.58a21.33,21.33,0,1,0-30.17,30.17l64,64a21.33,21.33,0,0,0,30.17,0l64-64a21.33,21.33,0,1,0-30.17-30.17Z" />
+                </svg></button>
+        </div>
+    </div>
+    <div class="end">
+        <div class="bkColor"></div>
+        <div class="fail">
+            <img class="img" src="https://mohamedelghandour.github.io/Snake/img/game%20over.png" alt="">
+        </div>
+    </div>
+    <div class="warning-rotate">
+        <h1>try to rotate the phone to play with The best performance.</h1>
+    </div>
+    <div class="hidden-Sound">
+        <audio class="eat-sound" controls>
+            <source src="https://mohamedelghandour.github.io/Snake/sound/eat.ogg" type="audio/ogg">
+            <source src="https://mohamedelghandour.github.io/Snake/sound/eat.wav" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <audio class="die-sound" controls>
+            <source src="https://mohamedelghandour.github.io/Snake/sound/gameover.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <audio class="background-sound" controls loop>
+            <source src="https://mohamedelghandour.github.io/Snake/sound/backgroundmusic.mp3" type="audio/ogg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    <a href="https://codepen.io/MohamedElGhandour" target="_blank">
+        <div class="profile tooltip">
+            <span class="tooltiptext">Mohamed Elghandour</span>
+        </div>
+    </a>
+    <!---Script Files-->
+    <script src="intro.js">
+    </script>
+</body>
+
+</html>
